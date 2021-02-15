@@ -29,8 +29,9 @@ run base_install.sh
 reboot
 
 nmtui to connect on your network 
-run full-setup.sh 
-OPTIONAL: run the single command inside Setup-script:
+run full-setup.sh
+
+OPTIONAL: run the single command inside Setup-script instead of full-setup-sh :
 
   - run dm-setup.sh
   - run env-setup.sh
