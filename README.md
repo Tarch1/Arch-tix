@@ -29,13 +29,13 @@ run base_install.sh
 reboot
 
 nmtui to connect on your network 
-run full-setup.sh (or optionally the single command inside Setup-script:
+run full-setup.sh 
+OPTIONAL: run the single command inside Setup-script:
 
   - run dm-setup.sh
   - run env-setup.sh
   - run snapper.sh
   - run trizen.sh
   - run wm-setup.sh
-  )
   
 Reboot and Enjoy!
