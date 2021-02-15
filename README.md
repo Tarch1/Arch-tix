@@ -9,6 +9,7 @@ For wired connection use connman:
 - rfkill unblock all
 - ip link interface up
 - connmanctl
+
      - scan wifi
      - services
      - agent on
@@ -16,19 +17,19 @@ For wired connection use connman:
      - quit
 
 git clone https://github.com/Tarch1/Arch-tix
+cd Arch-tix/
+adjust base_install.sh :
 
-- cd Arch-tix/
-
-- adjust base_install.sh :
      - Localization-Settings
      - Filesystem-Settings
      - Package 
 
-- chmod +x set-permission.sh and run it (./*.sh)
-- run base_install.sh
-- reboot
-- nmtui to connect on your network 
-- run full-setup.sh (or optionally the single command inside Setup-script:
+chmod +x set-permission.sh and run it (./*.sh)
+run base_install.sh
+reboot
+
+nmtui to connect on your network 
+run full-setup.sh (or optionally the single command inside Setup-script:
 
   - run dm-setup.sh
   - run env-setup.sh
