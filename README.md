@@ -8,7 +8,7 @@ For wired connection use connman:
 - Found the interface
 - rfkill unblock all
 - ip link interface up
-- connmanctl
+- connmanctl :
 
      - scan wifi
      - services
