@@ -28,11 +28,13 @@ git clone https://github.com/Tarch1/Arch-tix
 - run base_install.sh
 - reboot
 - nmtui to connect on your network 
-- run full-setup.sh (or optionally the single command:
+- run full-setup.sh (or optionally the single command inside Setup-script:
 
-  - run trizen.sh
-  - run bspwm-conf.sh
+  - run dm-setup.sh
+  - run env-setup.sh
   - run snapper.sh
-  - run dm-setup.sh )
+  - run trizen.sh
+  - run wm-setup.sh
+  )
   
 Reboot and Enjoy!
