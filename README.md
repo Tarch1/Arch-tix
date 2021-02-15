@@ -3,12 +3,13 @@ Universal installation script
 
 STEP:
 
-For wired connection use connman:
+Find your interface with: 
 
-- Found the interface
-- rfkill unblock all
-- ip link interface up
-- connmanctl :
+     - ip a
+     - rfkill unblock all
+     - ip link interface up
+
+then use connmanctl:
 
      - scan wifi
      - services
@@ -18,7 +19,7 @@ For wired connection use connman:
 
 git clone https://github.com/Tarch1/Arch-tix
 cd Arch-tix/
-adjust base_install.sh :
+adjust base_install.sh:
 
      - Localization-Settings
      - Filesystem-Settings
@@ -31,7 +32,7 @@ reboot
 nmtui to connect on your network 
 run full-setup.sh
 
-OPTIONAL: run the single command inside Setup-script instead of full-setup-sh :
+OPTIONAL: run the single command inside Setup-script instead of full-setup-sh:
 
      - run dm-setup.sh
      - run env-setup.sh
