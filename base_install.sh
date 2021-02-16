@@ -211,7 +211,7 @@ function audio(){
 }
 
 function usersetup(){	
-	$chroot /mnt useradd -mG wheel,video,storage,input $user
+	$chroot /mnt useradd -mG wheel,video,audio,storage,input $user
 	sed -i '/%wheel ALL=(ALL) ALL/s/# //' /mnt/etc/sudoers
 	sed -i 's/"us"/"it"/' /etc/conf.d/keymaps 
 	$chroot /mnt echo $user
