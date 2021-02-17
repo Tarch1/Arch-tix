@@ -29,7 +29,7 @@ function main(){
 	baseutils="man bash-completion kitty vim nano"
 	fs="efibootmgr os-prober mtools parted dosfstools sbsigntools ntfs-3g gvfs-mtp"
 	net="networkmanager network-manager-applet"
-	audio="pulseaudio pulseaudio-alsa pulseaudio-bluetooth pavucontrol lib32-libpulse lib32-alsa-plugins" 
+	audio="pulseaudio pulseaudio-bluetooth pavucontrol"  #pulseaudio-alsa alsa-utils , for wine use (lib32-libpulse lib32-alsa-plugins)
         android="android-tools android-udev"
 	bluetooth="bluez bluez-utils bluez-plugins"
  	print="cups cups-pdf avahi"
@@ -211,7 +211,7 @@ function audio(){
 }
 
 function usersetup(){	
-	$chroot /mnt useradd -mG wheel,video,audio,storage,input $user
+	$chroot /mnt useradd -mG wheel,video,storage,input $user
 	sed -i '/%wheel ALL=(ALL) ALL/s/# //' /mnt/etc/sudoers
 	sed -i 's/"us"/"it"/' /etc/conf.d/keymaps 
 	$chroot /mnt echo $user
