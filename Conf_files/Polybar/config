@@ -30,7 +30,7 @@ padding-right     = 5
 spacing           = 0
 module-margin     = 2
 
-font-0            = SF Pro Display:size=13;3
+font-0            = Roboto:size=13;3
 #font-1            = Ionicons:style=Regular:size=13;2
 #font-2            = JoyPixels:scale=13;1
 
