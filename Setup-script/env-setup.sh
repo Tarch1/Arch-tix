@@ -1,4 +1,4 @@
-sudo pacman -S rofi sxiv feh python-pywal lxappearance imagemagick pacman-contrib slock dunst tcl tk --noconfirm
+sudo pacman -S ttf-roboto rofi sxiv feh python-pywal lxappearance imagemagick pacman-contrib slock dunst tcl tk --noconfirm
 mkdir ~/{.wallpapers,.config/{kitty,polybar,rofi,dunst}}
 #sudo mkdir -p /usr/share/slim/themes/minimal/
 
