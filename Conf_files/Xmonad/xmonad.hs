@@ -59,6 +59,7 @@ myLog proc = dynamicLogWithPP $ xmobarPP
   , ppHiddenNoWindows = xmobarColor "#c792ea" ""        -- Hidden workspaces (no windows)
   , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"  -- Urgent workspace
   , ppExtras  = [windowCount]                           -- n windows current workspace
+  , ppSep =  "<fc=#98be65> | </fc>"                     -- Separators
   , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
   }
 
