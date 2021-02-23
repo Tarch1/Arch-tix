@@ -148,9 +148,9 @@ myStartup = do
   spawnOnce "setxkbmap -layout it &"
   spawnOnce "numlockx &"
   spawnOnce "xset s 60 120"
-  spawnOnce "xss-lock -n \"notify-send -u critical -t 5000 -- 'LOCKING in 1 min'\" -- slock &"
+  spawnOnce "xss-lock -n \"notify-send -u critical -t 5000 -- 'LOCKING in 1 min'\" -- slock"
   spawnOnce "picom &"
-  spawnOnce "wal -i ~/.wallpapers/ -o ~/.config/dunst/dunst-color.sh &"
+  spawnOnce "wal -i ~/.wallpapers/ -o ~/.config/dunst/dunst-color.sh"
   spawnOnce "./.config/low-battery.sh"
 
 myManage = composeAll
