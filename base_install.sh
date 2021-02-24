@@ -181,10 +181,10 @@ function systempkg(){
   	sed -i '/\[multilib\]/,/mirrorlist/ s/#//' /mnt/etc/pacman.conf 
 	$chroot /mnt pacman -Syy $dev $fs $net $bluetooth $audio $android $archive $filemanager $print $graphics $vulkan $xorg $baseutils $apps $media --noconfirm
 	echo $mkim
-    $mkim
-    echo done	
-    echo $mkim
-    $mkir
+    	$mkim
+    	echo done	
+    	echo $mkim
+    	$mkir
 	echo done
 }
 
