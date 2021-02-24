@@ -88,7 +88,7 @@ function Artix() {
 	chroot="artix-chroot" 		
 	services="artservices"	
 	init="openrc"
-	rc-pack=$rc
+	rcpacks=$rc
 }
 
 function diskpart(){
@@ -180,7 +180,7 @@ function sethosts (){
 
 function systempkg(){
   	sed -i '/\[multilib\]/,/mirrorlist/ s/#//' /mnt/etc/pacman.conf 
-	$chroot /mnt pacman -Syy $dev $fs $net $bluetooth $audio $android $archive $filemanager $print $graphics $vulkan $xorg $baseutils $apps $media $rc-pack --noconfirm
+	$chroot /mnt pacman -Syy $dev $fs $net $bluetooth $audio $android $archive $filemanager $print $graphics $vulkan $xorg $baseutils $apps $media $rcpacks --noconfirm
 	sed -i 's/MODULES=()/MODULES=($mkim)/' /mnt/etc/mkinitcpio.conf
 }
 
