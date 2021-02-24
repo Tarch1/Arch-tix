@@ -88,6 +88,7 @@ function Artix() {
 	chroot="artix-chroot" 		
 	services="artservices"	
 	init="openrc"
+	rc-pack=$rc
 }
 
 function diskpart(){
@@ -128,7 +129,7 @@ function btrfsmount(){
 	#
 	sed -i "s/username/$user/g" ../Arch-tix/Setup-script/snapper.sh
 	lsblk -f
-	mkim="$(sed -i 's/MODULES=()/MODULES=(btrfs)/' /mnt/etc/mkinitcpio.conf)"
+	mkim="btrfs"
 	mkir="mkinitcpio -p linux"
 	sed -i '/snapper/ s/#//' ../Arch-tix/full-setup.sh 
 }
@@ -179,13 +180,8 @@ function sethosts (){
 
 function systempkg(){
   	sed -i '/\[multilib\]/,/mirrorlist/ s/#//' /mnt/etc/pacman.conf 
-	$chroot /mnt pacman -Syy $dev $fs $net $bluetooth $audio $android $archive $filemanager $print $graphics $vulkan $xorg $baseutils $apps $media --noconfirm
-	echo $mkim
-    	$mkim
-    	echo done	
-    	echo $mkim
-    	$mkir
-	echo done
+	$chroot /mnt pacman -Syy $dev $fs $net $bluetooth $audio $android $archive $filemanager $print $graphics $vulkan $xorg $baseutils $apps $media $rc-pack --noconfirm
+	sed -i 's/MODULES=()/MODULES=($mkim)/' /mnt/etc/mkinitcpio.conf
 }
 
 function artservices(){
