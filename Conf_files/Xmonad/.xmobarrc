@@ -1,0 +1,23 @@
+Config 
+  { font    = "xft:Roboto:pixelsize=15:antialias=true:hinting=true"
+  , bgColor = "#282c34"
+  , fgColor = "#A9A9A9"
+  , position = Static { xpos = 0 , ypos = 0, width = 1920, height = 24 } --TopW C 75
+  , alpha = 255 -- 0 transparent 255 solid
+  , overrideRedirect = True
+  , hideOnStart = False
+  , commands = 
+    [ Run Date " %R  %A, %d %b " "date" 50
+    , Run Network "wlo1" ["-L","0","-H","5000","--high","red"] 5
+--    , Run Cpu ["-t", " cpu: <total>%","-H","50","--high","red"] 20
+--    , Run Memory ["-t", " ram: <usedratio>%"] 20
+--    , Run Com "/home/tarch1/.config/pacupdate.sh" [] "pacupdate" 36000
+    , Run Brightness [ "-t", "Lum: <percent>%", "--", "-D", "intel_backlight" ] 10
+    , Run Battery [ "-t", "Bat: <left>%"] 60
+    , Run Volume "default" "Master" [ "-t", "Vol: <volume>%"] 1
+    , Run UnsafeStdinReader
+    ]
+  , sepChar = "%"
+  , alignSep = "}{"
+  , template = "<fc=#FFF5EE>%date%</fc> %UnsafeStdinReader% }{ <fc=#FFEB3B>%battery%</fc> | <fc=#f44336>%bright%</fc> | <fc=#26A69A><action=pavucontrol>%default:Master%</action></fc> | %wlo1%  <fc=#FFAB40><action=`loginctl reboot`>     Reboot</action></fc> | <fc=#B2DFDB><action=`loginctl poweroff`>Shutdown  </action></fc>"
+  }
