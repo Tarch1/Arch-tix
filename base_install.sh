@@ -129,7 +129,7 @@ function btrfsmount(){
 	#
 	sed -i "s/username/$user/g" ../Arch-tix/Setup-script/snapper.sh
 	lsblk -f
-	mkim="btrfs"
+	mkim="'s/MODULES=()/MODULES=(btrfs)/'"
 	mkir="mkinitcpio -p linux"
 	sed -i '/snapper/ s/#//' ../Arch-tix/full-setup.sh 
 }
@@ -181,7 +181,7 @@ function sethosts (){
 function systempkg(){
   	sed -i '/\[multilib\]/,/mirrorlist/ s/#//' /mnt/etc/pacman.conf 
 	$chroot /mnt pacman -Syy $dev $fs $net $bluetooth $audio $android $archive $filemanager $print $graphics $vulkan $xorg $baseutils $apps $media $rcpacks --noconfirm
-	sed -i 's/MODULES=()/MODULES=($mkim)/' /mnt/etc/mkinitcpio.conf
+	sed -i $mkim /mnt/etc/mkinitcpio.conf
 }
 
 function artservices(){
