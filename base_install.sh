@@ -34,7 +34,7 @@ function main(){
 	bluetooth="bluez bluez-utils bluez-plugins"
  	print="cups cups-pdf avahi"
 	xorg="xorg-server xorg-xinit xorg-xinit light numlockx libinput xorg-xinput xss-lock" 
-	apps="telegram-desktop firefox feh calc fd htop bmon"
+	apps="telegram-desktop firefox feh calc fd bpytop" #for netwotk bmon
 	graphics="mesa nvidia-prime nvidia nvidia-utils lib32-nvidia-utils nvidia-settings"
 	vulkan="vulkan-icd-loader lib32-vulkan-icd-loader lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-mesa-layers"
 	filemanager="xed vifm pcmanfm tumbler raw-thumbnailer"
