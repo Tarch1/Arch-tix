@@ -9,7 +9,7 @@ wal -i ~/.wallpapers/ -o ~/.config/dunst/dunst-color.sh &
 xset s 60 120
 xss-lock -n "notify-send -u critical -t 5000 -- 'LOCKING in 2 min'" -- slock &
 picom &
-./.config/low-battery.sh &
+~/.config/low-battery.sh &
 ~/.config/polybar/launch.sh
 
 bspc monitor -d I II III IV V
