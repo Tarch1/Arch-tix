@@ -1,4 +1,4 @@
-chmod +x Setup-script/*
+sudo chmod +x Setup-script/*
 ./Setup-script/trizen.sh
 ./Setup-script/env-setup.sh
 #./Setup-script/snapper.sh
