@@ -29,11 +29,11 @@ function main(){
 	baseutils="man bash-completion kitty vim nano"
 	fs="efibootmgr os-prober mtools parted dosfstools sbsigntools ntfs-3g gvfs-mtp"
 	net="networkmanager network-manager-applet"
-	audio="pulseaudio pulseaudio-bluetooth pavucontrol"  #pulseaudio-alsa alsa-utils , for wine use (lib32-libpulse lib32-alsa-plugins)
+	audio="pipewire"  #pulseaudio pulseaudio-bluetooth pavucontrol ##pulseaudio-alsa alsa-utils , for wine use (lib32-libpulse lib32-alsa-plugins)
         android="android-tools android-udev"
 	bluetooth="bluez bluez-utils bluez-plugins"
  	print="cups cups-pdf avahi"
-	xorg="xorg-server xorg-xinit xorg-xinit light numlockx libinput xorg-xinput xss-lock" 
+	##xorg="xorg-server xorg-xinit xorg-xinit light numlockx libinput xorg-xinput xss-lock" 
 	apps="telegram-desktop firefox feh calc fd bpytop" #for netwotk bmon
 	graphics="mesa nvidia-prime nvidia nvidia-utils lib32-nvidia-utils nvidia-settings"
 	vulkan="vulkan-icd-loader lib32-vulkan-icd-loader lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-mesa-layers"
@@ -201,9 +201,10 @@ function archservices(){
 }
 
 function audio(){
-	#echo "options snd-hda-intel model=auto" | sudo tee -a /mnt/etc/modprobe.d/alsa-base.conf
-	echo "options snd-hda-intel dmic_detect=0" | sudo tee -a /mnt/etc/modprobe.d/alsa-base.conf
-	#echo "blacklist snd_soc_skl" | sudo tee -a /mnt/etc/modprobe.d/blacklist.conf
+	##echo "options snd-hda-intel model=auto" | sudo tee -a /mnt/etc/modprobe.d/alsa-base.conf
+	##echo "blacklist snd_soc_skl" | sudo tee -a /mnt/etc/modprobe.d/blacklist.conf
+	#echo "options snd-hda-intel dmic_detect=0" | sudo tee -a /mnt/etc/modprobe.d/alsa-base.conf
+
 }
 
 function usersetup(){	
