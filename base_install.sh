@@ -29,7 +29,7 @@ function main(){
 	baseutils="man bash-completion kitty vim nano"
 	fs="efibootmgr os-prober mtools parted dosfstools sbsigntools ntfs-3g gvfs-mtp"
 	net="networkmanager network-manager-applet"
-	audio="pipewire"  #pulseaudio pulseaudio-bluetooth pavucontrol ##pulseaudio-alsa alsa-utils , for wine use (lib32-libpulse lib32-alsa-plugins)
+	audio="pipewire pipewire-pulse"  #pulseaudio pulseaudio-bluetooth pavucontrol ##pulseaudio-alsa alsa-utils , for wine use (lib32-libpulse lib32-alsa-plugins)
         android="android-tools android-udev"
 	bluetooth="bluez bluez-utils bluez-plugins"
  	print="cups cups-pdf avahi"
@@ -204,7 +204,7 @@ function audio(){
 	##echo "options snd-hda-intel model=auto" | sudo tee -a /mnt/etc/modprobe.d/alsa-base.conf
 	##echo "blacklist snd_soc_skl" | sudo tee -a /mnt/etc/modprobe.d/blacklist.conf
 	#echo "options snd-hda-intel dmic_detect=0" | sudo tee -a /mnt/etc/modprobe.d/alsa-base.conf
-	echo "options snd-intel-dspcfg dsp_driver=1" | sudo tee -a /mnt/etc/modprobe.d/alsa-base.conf
+	echo "options snd-intel-dspcfg dsp_driver=1" | sudo tee -a /mnt/etc/modprobe.d/dsp.conf
 
 }
 
