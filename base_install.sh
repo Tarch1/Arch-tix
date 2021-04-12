@@ -38,7 +38,7 @@ function main(){
 	graphics="mesa nvidia-prime nvidia nvidia-utils lib32-nvidia-utils nvidia-settings"
 	vulkan="vulkan-icd-loader lib32-vulkan-icd-loader lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-mesa-layers"
 	#filemanager="xed vifm pcmanfm tumbler raw-thumbnailer"
-	#archive="file-roller atool bzip2 cpio gzip lha xz lzop p7zip tar unrar zip unzip"
+	archive="file-roller atool bzip2 cpio gzip lha xz lzop p7zip tar unrar zip unzip"
 	#media="celluloid mate-utils pantheon-screenshot simplescreenrecorder"
 	elogind="elogind elogind-openrc"
 	rc="ntp-openrc avahi-openrc cups-openrc bluez-openrc networkmanager-openrc"
