@@ -78,6 +78,7 @@ function Arch() {
 	chroot="arch-chroot" 		
 	services="archservices"	
 	sed -i 's/lightdm-openrc//' ../Arch-tix/Setup-script/dm-setup.sh
+	sed -i 's/openrc//' ../Arch-tix/Conf_files/Gnome/gnome-setup.sh 
 }
 
 function Artix() {
