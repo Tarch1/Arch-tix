@@ -1,0 +1,11 @@
+sudo pacman -Syu gnome lxappearance gdm gdm-openrc --noconfirm
+mkdir ~/{.wallpapers,.config}
+cp -r /media/internal_hdd/OS/Wallpapers/* ~/.wallpapers
+cp ~/Arch-tix/Conf_files/kitty.conf ~/.config/kitty/kitty.conf
+cp ~/Arch-tix/Conf_files/Script/pfetch ~/.pfetch
+cp ~/Arch-tix/Conf_files/nanorc ~/.nanorc
+echo 'Xft.dpi: 90' > ~/.Xdefaults
+sudo cp ~/Arch-tix/Conf_files/40-libinput.conf /usr/share/X11/xorg.conf.d/40-libinput.conf
+sudo ln -s /usr/share/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf
+chmod +x ~/.pfetch
+sudo rc-update add gdm default
