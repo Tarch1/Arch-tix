@@ -54,7 +54,7 @@ function main(){
 }
 
 function install(){
-	$distro && stage=distro
+	$distro && stage=distro;
 	diskpart && stage=diskpart;
 	diskformat && stage=diskformat;
 	$mounting && stage=$mounting;
