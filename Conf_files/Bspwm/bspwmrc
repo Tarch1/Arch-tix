@@ -1,5 +1,7 @@
 #! /bin/sh
-
+/usr/bin/pipewire
+/usr/bin/pipewire-pulse
+/usr/bin/pipewire-media-session
 pgrep -x sxhkd > /dev/null || sxhkd &
 #chmod a+w /sys/class/backlight/intel_backlight/brightness &
 setxkbmap -layout it &
