@@ -121,11 +121,12 @@ function btrfsmount(){
 	btrfs filesystem label $ROOT_PART "$rootlabel"
 	mount $ROOT_PART /mnt
 	btrfs su cr /mnt/@
+	btrfs su cr /mnt/@home
 	btrfs su cr /mnt/@snapshots
 	umount /mnt
 	mount -o noatime,compress=lzo,space_cache=v2,subvol=@ $ROOT_PART /mnt
-	mkdir -p /mnt/{boot,.snapshots}
-	mount -o noatime,compress=lzo,space_cache=v2,subvol=@snapshots $ROOT_PART /mnt/.snapshots
+	mkdir -p /mnt/{boot,home,.snapshots}
+	mount -o noatime,compress=lzo,space_cache=v2,discard=async,subvol=@snapshots $ROOT_PART /mnt/.snapshots
 	mount $BOOT_PART /mnt/boot
 	#
 	sed -i "s/username/$user/g" ../Arch-tix/Setup-script/snapper.sh
