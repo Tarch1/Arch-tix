@@ -29,7 +29,7 @@ function main(){
 	baseutils="man bash-completion kitty vim nano"
 	fs="efibootmgr os-prober mtools parted dosfstools sbsigntools ntfs-3g gvfs-mtp"
 	net="networkmanager network-manager-applet"
-	audio="pipewire pipewire-pulse pipewire-alsa"  #pulseaudio pulseaudio-bluetooth pavucontrol ##pulseaudio-alsa alsa-utils , for wine use (lib32-libpulse lib32-alsa-plugins)
+	audio="pipewire pipewire-pulse pipewire-alsa pipewire-jack"  #pulseaudio pulseaudio-bluetooth pavucontrol ##pulseaudio-alsa alsa-utils , for wine use (lib32-libpulse lib32-alsa-plugins)
         android="android-tools android-udev"
 	bluetooth="bluez bluez-utils bluez-plugins"
  	print="cups cups-pdf avahi"
