@@ -43,3 +43,4 @@ OPTIONAL: run the single command inside Setup-script instead of full-setup-sh:
 Reboot and Enjoy!
 
 PS: if gnome on wayland not start's on machine's with hybrid gpu setup comment << DRIVER=="nvidia"......>> rule at /lib/udev/rules.d/61-gdm.rules
+     addition for super+n navigation use:  for i in {1..9}; do gsettings set "org.gnome.shell.keybindings" "switch-to-application-$i" "[]"; done, checking that they are properly unset with gsettings list-recursively | grep switch-to-application | sort
