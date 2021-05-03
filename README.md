@@ -42,7 +42,11 @@ OPTIONAL: run the single command inside Setup-script instead of full-setup-sh:
   
 Reboot and Enjoy!
 
-PS: if gnome on wayland not start's on machine's with hybrid gpu setup comment << DRIVER=="nvidia"......>> rule at /lib/udev/rules.d/61-gdm.rules
+PS: if gnome on wayland not start's on machine's with hybrid gpu setup comment 
+     
+     DRIVER=="nvidia"......
+
+at /lib/udev/rules.d/61-gdm.rules
 
 
 An addition for super+n navigation use: 
