@@ -219,6 +219,7 @@ function usersetup(){
 	$chroot /mnt echo su
 	$chroot /mnt passwd
 	cp ../Arch-tix/Conf_files/bashrc /mnt/home/tarch1/.bashrc
+	touch /mnt/etc/environment
 	sed -i "$ a\Exec=env MOZ_ENABLE_WAYLAND=1 /usr/lib/firefox/firefox %u" /mnt/etc/environment
 }
 
