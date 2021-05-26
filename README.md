@@ -48,7 +48,7 @@ PS: if gnome on wayland not start's on machine's with hybrid gpu setup comment
 
 at /lib/udev/rules.d/61-gdm.rules
 
-For increasing volume steps: (number mean the steps, less value = more steps)
+For increasing volume steps: (less value = more steps)
 
      gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 1
 
