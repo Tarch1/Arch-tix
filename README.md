@@ -49,6 +49,6 @@ PS: if gnome on wayland not start's on machine's with hybrid gpu setup comment
 at /lib/udev/rules.d/61-gdm.rules
 
 
-An addition for super+n navigation use: 
+An addition for super+($number) navigation use: 
      
      for i in {1..9}; do gsettings set "org.gnome.shell.keybindings" "switch-to-application-$i" "[]"; done, checking that they are properly unset with gsettings list-recursively | grep switch-to-application | sort
