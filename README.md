@@ -21,9 +21,9 @@ git clone https://github.com/Tarch1/Arch-tix
 cd Arch-tix/
 adjust base_install.sh:
 
-     - Localization-Settings
-     - Filesystem-Settings
-     - Package 
+- Localization-Settings
+- Filesystem-Settings
+- Package 
 
 chmod +x set-permission.sh and run it (./*.sh)
 run base_install.sh
@@ -48,6 +48,9 @@ PS: if gnome on wayland not start's on machine's with hybrid gpu setup comment
 
 at /lib/udev/rules.d/61-gdm.rules
 
+For increasing volume steps:
+
+     gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 5
 
 An addition for super+($number) navigation use: 
      
