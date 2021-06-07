@@ -150,7 +150,7 @@ function externaldrive(){
 }
 
 function baseinstall(){
-	$pkgstrap /mnt $linux $microcode $init $btrfsdep
+	$pkgstrap /mnt $linux $microcode $init $btrfsdep $elogind
 	$fstab -U /mnt >> /mnt/etc/fstab 
 	cat /mnt/etc/fstab
 }
