@@ -40,7 +40,7 @@ function main(){
 	#filemanager="xed vifm pcmanfm tumbler raw-thumbnailer"
 	archive="file-roller atool bzip2 cpio gzip lha xz lzop p7zip tar unrar zip unzip"
 	#media="celluloid mate-utils pantheon-screenshot simplescreenrecorder"
-	elogind="elogind elogind-openrc"
+	elogind=""
 	rc="ntp-openrc avahi-openrc cups-openrc bluez-openrc networkmanager-openrc"
 	stage=0    
 	
@@ -90,6 +90,7 @@ function Artix() {
 	services="artservices"	
 	init="openrc"
 	rcpacks=$rc
+        elogind="elogind elogind-openrc"
 }
 
 function diskpart(){
@@ -126,6 +127,7 @@ function btrfsmount(){
 	umount /mnt
 	mount -o noatime,compress=lzo,space_cache=v2,subvol=@ $ROOT_PART /mnt
 	mkdir -p /mnt/{boot,home,.snapshots}
+        mount -o noatime,compress=lzo,space_cache=v2,subvol=@home $ROOT_PART /mnt/home
 	mount -o noatime,compress=lzo,space_cache=v2,discard=async,subvol=@snapshots $ROOT_PART /mnt/.snapshots
 	mount $BOOT_PART /mnt/boot
 	#
