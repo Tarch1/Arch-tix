@@ -57,4 +57,4 @@ For increasing volume steps: (less value = more steps)
 An addition for super+($number) navigation use: 
      
      for i in {1..9}; do gsettings set "org.gnome.shell.keybindings" "switch-to-application-$i" "[]"; done
-     checking that they are properly unset with gsettings list-recursively | grep switch-to-application | sort
+checking that they are properly unset with gsettings list-recursively | grep switch-to-application | sort
