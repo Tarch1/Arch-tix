@@ -208,7 +208,7 @@ function audio(){
 	##echo "options snd-hda-intel model=auto" | sudo tee -a /mnt/etc/modprobe.d/alsa-base.conf
 	##echo "blacklist snd_soc_skl" | sudo tee -a /mnt/etc/modprobe.d/blacklist.conf
 	#echo "options snd-hda-intel dmic_detect=0" | sudo tee -a /mnt/etc/modprobe.d/alsa-base.conf
-	#echo "options snd-intel-dspcfg dsp_driver=1" | sudo tee -a /mnt/etc/modprobe.d/dsp.conf
+	echo "options snd-intel-dspcfg dsp_driver=1" >> /mnt/etc/modprobe.d/dsp.conf
 	echo "no audio setup"
 }
 
