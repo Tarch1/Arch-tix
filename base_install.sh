@@ -36,6 +36,7 @@ function main(){
 	##xorg="xorg-server xorg-xinit xorg-xinit light numlockx libinput xorg-xinput xss-lock" 
 	apps="telegram-desktop firefox feh calc fd bpytop" #for netwotk bmon
 	graphics="mesa nvidia-prime nvidia nvidia-utils lib32-nvidia-utils nvidia-settings"
+	hardwareacceleration="libva-mesa-driver mesa-vdpau intel-media-driver"
 	vulkan="vulkan-icd-loader lib32-vulkan-icd-loader lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-mesa-layers"
 	#filemanager="xed vifm pcmanfm tumbler raw-thumbnailer"
 	archive="file-roller atool bzip2 cpio gzip lha xz lzop p7zip tar unrar zip unzip"
@@ -183,7 +184,7 @@ function sethosts (){
 
 function systempkg(){
   	sed -i '/\[multilib\]/,/mirrorlist/ s/#//' /mnt/etc/pacman.conf 
-	$chroot /mnt pacman -Syy $dev $fs $net $bluetooth $audio $android $archive $filemanager $print $graphics $vulkan $xorg $baseutils $apps $media $rcpacks --noconfirm
+	$chroot /mnt pacman -Syy $dev $fs $net $bluetooth $audio $android $archive $filemanager $print $graphics $vulkan $hardwareacceleration $xorg $baseutils $apps $media $rcpacks --noconfirm
 	cp ../Arch-tix/Conf_files/mkinitcpio.conf /mnt/etc/
 	$chroot /mnt mkinitcpio -p linux
 }
