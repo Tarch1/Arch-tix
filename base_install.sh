@@ -8,7 +8,7 @@ function main(){
 	hostn="tarch1"
 	user="tarch1"
 	localization="en_GB.UTF-8"
-	language="en_GB.UTF-8"			#"it_IT.UTF-8"
+	language="en_US.UTF-8"			#"it_IT.UTF-8"
 	timezone="Europe/Rome"
 	
 	###### Disk-Settings #####
