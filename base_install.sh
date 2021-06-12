@@ -95,6 +95,8 @@ function Artix() {
 }
 
 function diskpart(){
+        pacman-key --init
+        pacman-key --populate artix
  	pacman -Sy --noconfirm parted gptfdisk mtools ntfs-3g dialog
 	devicelist=$(lsblk -dplnx size -o name,size | grep -Ev "boot|rpmb|loop" | tac)
 	DRIVE=$(dialog --stdout --menu "Select installation disk" 0 0 0 ${devicelist}) || exit 1
