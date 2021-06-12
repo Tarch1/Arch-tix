@@ -92,11 +92,12 @@ function Artix() {
 	init="openrc"
 	rcpacks=$rc
         elogind="elogind elogind-openrc"
+	pacman-key --init
+        pacman-key --populate artix
+	pacman -Sy --noconfirm artix-archlinux-support
 }
 
 function diskpart(){
-        pacman-key --init
-        pacman-key --populate artix
  	pacman -Sy --noconfirm parted gptfdisk mtools ntfs-3g dialog
 	devicelist=$(lsblk -dplnx size -o name,size | grep -Ev "boot|rpmb|loop" | tac)
 	DRIVE=$(dialog --stdout --menu "Select installation disk" 0 0 0 ${devicelist}) || exit 1
@@ -185,19 +186,22 @@ function sethosts (){
 }
 
 function systempkg(){
+        pacman-key --init
+        pacman-key --populate artix
+	pacman -Sy --noconfirm artix-archlinux-support
   	echo "[extra]" >> /mnt/etc/pacman.conf 
   	echo "Include = /etc/pacman.d/mirrorlist-arch" >> /mnt/etc/pacman.conf 
   	echo "[community]" >> /mnt/etc/pacman.conf 
   	echo "Include = /etc/pacman.d/mirrorlist-arch" >> /mnt/etc/pacman.conf 
   	echo "[multilib]" >> /mnt/etc/pacman.conf 
   	echo "Include = /etc/pacman.d/mirrorlist-arch" >> /mnt/etc/pacman.conf
-	#sed -i '/\[lib32\]/,/mirrorlist/ s/#//' /mnt/etc/pacman.conf
+	sed -i '/\[lib32\]/,/mirrorlist/ s/#//' /mnt/etc/pacman.conf
 	$chroot /mnt pacman -Syy $dev $fs $net $bluetooth $audio $android $archive $filemanager $print $graphics $vulkan $hardwareacceleration $xorg $baseutils $apps $media $rcpacks --noconfirm
 	cp ../Arch-tix/Conf_files/mkinitcpio.conf /mnt/etc/
 	$chroot /mnt mkinitcpio -p linux
 }
 
-function systempkg(){
+function systempkg1111111(){
   	#sed -i '/\[multilib\]/,/mirrorlist/ s/#//' /mnt/etc/pacman.conf 
 	$chroot /mnt pacman -Syy $dev $fs $net $bluetooth $audio $android $archive $filemanager $print $graphics $vulkan $hardwareacceleration $xorg $baseutils $apps $media $rcpacks --noconfirm
 	cp ../Arch-tix/Conf_files/mkinitcpio.conf /mnt/etc/
