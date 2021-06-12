@@ -104,7 +104,7 @@ function diskpart(){
         # --new=2:0:0       --typecode=2:8300 \
         #   $DRIVE
 	#sgdisk --verify $DRIVE
-	parted --script "$DRIVE" mklabel gpt \
+	parted --script $DRIVE mklabel gpt \
   	mkpart ESP fat32 0% 513MiB \
   	set 1 boot on \
   	mkpart primary btrfs 513MiB 100%
@@ -180,6 +180,19 @@ function sethosts (){
 	echo 127.0.0.1  localhost >> /mnt/etc/hosts
 	echo ::1  localhost >> /mnt/etc/hosts
 	echo 127.0.1.1  $hostn.localdomain  $hostn >> /mnt/etc/hosts
+}
+
+function systempkg(){
+  	echo "[extra]" >> /mnt/etc/pacman.conf 
+  	echo "Include = /etc/pacman.d/mirrorlist-arch" >> /mnt/etc/pacman.conf 
+  	echo "[community]" >> /mnt/etc/pacman.conf 
+  	echo "Include = /etc/pacman.d/mirrorlist-arch" >> /mnt/etc/pacman.conf 
+  	echo "[multilib]" >> /mnt/etc/pacman.conf 
+  	echo "Include = /etc/pacman.d/mirrorlist-arch" >> /mnt/etc/pacman.conf
+	#sed -i '/\[lib32\]/,/mirrorlist/ s/#//' /mnt/etc/pacman.conf
+	$chroot /mnt pacman -Syy $dev $fs $net $bluetooth $audio $android $archive $filemanager $print $graphics $vulkan $hardwareacceleration $xorg $baseutils $apps $media $rcpacks --noconfirm
+	cp ../Arch-tix/Conf_files/mkinitcpio.conf /mnt/etc/
+	$chroot /mnt mkinitcpio -p linux
 }
 
 function systempkg(){
