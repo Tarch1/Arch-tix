@@ -183,7 +183,7 @@ function sethosts (){
 }
 
 function systempkg(){
-  	sed -i '/\[multilib\]/,/mirrorlist/ s/#//' /mnt/etc/pacman.conf 
+  	#sed -i '/\[multilib\]/,/mirrorlist/ s/#//' /mnt/etc/pacman.conf 
 	$chroot /mnt pacman -Syy $dev $fs $net $bluetooth $audio $android $archive $filemanager $print $graphics $vulkan $hardwareacceleration $xorg $baseutils $apps $media $rcpacks --noconfirm
 	cp ../Arch-tix/Conf_files/mkinitcpio.conf /mnt/etc/
 	$chroot /mnt mkinitcpio -p linux
