@@ -267,6 +267,8 @@ function refind(){
 function efistub(){
 	uuid="$(blkid -s $label -o value $ROOT_PART)"
 	$chroot /mnt efibootmgr -c -d /dev/nvme0n1 -p 1 -L "$distro" -l /vmlinuz-linux -u 'rw root=$label=$uuid rootflags=subvol=@ initrd=\intel-ucode.img initrd=\initramfs-linux.img' --verbose
+        $chroot /mnt efibootmgr -c -d `printf $BOOT | awk '{printf substr($0,1,length($1)-1)}'` -p "$PART" -L "$distro" -l /$distro/vmlinuz-linux -u "root=$label=`blkid -s $uuid -o value $ROOT` rootfstype=btrfs rootflags=subvol=/$distro rw initrd=\\$distro\initramfs-linux.img"
+
 	echo efibootmgr -b lastnumber -B  #delete previous boot entries
 }
 
